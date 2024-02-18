@@ -1,0 +1,34 @@
+{
+  "name": "cd0292-building-a-server-project-starter",
+  "version": "1.0.0",
+  "description": "building-a-server-project-starter",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine",
+    "start": "npx nodemon",
+    "build": "npx tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caunhoc98lx/cd0292-building-a-server-project.git"
+  },
+  "author": "tranhien",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caunhoc98lx/cd0292-building-a-server-project/issues"
+  },
+  "homepage": "https://github.com/caunhoc98lx/cd0292-building-a-server-project#readme",
+  "devDependencies": {
+    "@types/jasmine": "^5.1.4",
+    "@types/node": "^20.11.19",
+    "@types/supertest": "^6.0.2",
+    "nodemon": "^3.0.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "jasmine": "^5.1.0",
+    "jasmine-spec-reporter": "^7.0.0",
+    "supertest": "^6.3.4"
+  }
+}
