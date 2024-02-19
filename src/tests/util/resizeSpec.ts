@@ -20,4 +20,13 @@ describe('readStream function', () => {
         const stream = readStream('icelandwaterfallnot', 300, 400)
         expect(stream.readableLength).toBe(0)
     })
+
+    it('should return error when file name is wrong', () => {
+        const stream = readStream('icelandwater', 300, 400);
+
+        stream.on('error', (error) => {
+            expect(error).toEqual(new Error('Not found'))
+        })
+
+    })
 })

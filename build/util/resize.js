@@ -1,24 +1,23 @@
-'use strict'
-var __importDefault =
-    (this && this.__importDefault) ||
-    function (mod) {
-        return mod && mod.__esModule ? mod : { default: mod }
-    }
-Object.defineProperty(exports, '__esModule', { value: true })
-exports.readStream = void 0
-const fs_1 = __importDefault(require('fs'))
-const path_1 = __importDefault(require('path'))
-const sharp_1 = __importDefault(require('sharp'))
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.readStream = void 0;
+const fs_1 = __importDefault(require("fs"));
+const path_1 = __importDefault(require("path"));
+const sharp_1 = __importDefault(require("sharp"));
 const readStream = (imageName, width, heigh) => {
-    const imagePath = path_1.default.join(
-        __dirname,
-        `../../images/${imageName || 'encenadaport'}.jpg`
-    )
-    const readStream = fs_1.default.createReadStream(imagePath)
-    let transform = (0, sharp_1.default)()
+    const imagePath = path_1.default.join(__dirname, `../../images/${imageName || 'encenadaport'}.jpg`);
+    const readStream = fs_1.default.createReadStream(imagePath);
+    let transform = (0, sharp_1.default)();
     if (width || heigh) {
-        transform = transform.resize(width, heigh)
+        transform = transform.resize(width, heigh);
     }
-    return readStream.pipe(transform)
-}
-exports.readStream = readStream
+    const result = readStream.pipe(transform);
+    readStream.on('error', (err) => {
+        return new Error('Not found');
+    });
+    return result;
+};
+exports.readStream = readStream;

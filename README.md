@@ -59,3 +59,14 @@ Although not a requirement, we recommend using Git from the very beginning if yo
 ## License
 
 [License](LICENSE.txt)
+
+## Endpoint 
+
+GET: /api/images?filename=encenadaport?width=200&heigh=200
+response 
+status 200
+filename image is encenadaport with width 200 and heigh 200
+
+## Local url
+
+http://localhost:3000/api/images?filename=encenadaport?width=200&heigh=200
